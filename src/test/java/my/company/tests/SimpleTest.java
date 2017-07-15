@@ -18,7 +18,7 @@ import static org.junit.Assert.fail;
  * @author Dmitry Baev charlie@yandex-team.ru
  *         Date: 24.11.13
  */
-public class SimpleTest {
+public class SimpleTest extends AbstractTest {
 
     @Test
     public void simpleTest() throws Exception {
