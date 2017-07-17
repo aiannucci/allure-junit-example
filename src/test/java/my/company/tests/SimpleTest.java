@@ -2,6 +2,7 @@ package my.company.tests;
 
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -40,6 +41,7 @@ public class SimpleTest {
         return "yeah, 2 is 2";
     }
 
+    @Ignore
     @Test
     public void simpleTestWithAttachments() throws Exception {
         assertThat(2, is(2));
