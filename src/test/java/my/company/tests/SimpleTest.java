@@ -2,7 +2,10 @@ package my.company.tests;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Step;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,6 +23,24 @@ public class SimpleTest {
     @Test
     public void simpleTest() throws Exception {
         assertThat(2, is(2));
+    }
+
+    @Test
+    public void simpleTest2() throws Exception {
+        assertThat(2, is(3));
+    }
+
+    @Test
+    @Ignore("Fails on our CI environment")
+    @Issue("JIRA-001")
+    public void simpleTest3() throws Exception {
+        assertThat("this test", is("accomplishes nothing"));
+    }
+
+    @Test
+    @Owner("Unscrupulous dev")
+    public void simpleTest4() throws Exception {
+        throw new RuntimeException("There was a problem building the environment for the test.");
     }
 
     @Step

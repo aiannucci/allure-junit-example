@@ -1,7 +1,9 @@
-package my.company.tests.api;
+package my.company.tests;
 
 import static io.restassured.RestAssured.given;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -9,6 +11,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+@Epic("REST API")
+@Feature("GET Results")
 public class RestApiTest {
 
     private static RequestSpecification spec;
