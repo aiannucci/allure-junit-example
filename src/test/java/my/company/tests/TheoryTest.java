@@ -10,10 +10,6 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * @author Dmitry Baev charlie@yandex-team.ru
- *         Date: 29.11.13
- */
 @RunWith(Theories.class)
 public class TheoryTest {
 

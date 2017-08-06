@@ -1,5 +1,6 @@
 package my.company.tests;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.junit.Test;
@@ -14,10 +15,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.fail;
 
-/**
- * @author Dmitry Baev charlie@yandex-team.ru
- *         Date: 24.11.13
- */
 public class SimpleTest {
 
     @Test
@@ -26,17 +23,18 @@ public class SimpleTest {
     }
 
     @Step
-    public void checkThat2is2() {
+    private void checkThat2is2() {
         assertThat(2, is(2));
     }
 
     @Test
     public void simpleTestWithSteps() throws Exception {
         checkThat2is2();
+        Allure.addAttachment("Dynamic attachment", "This is a dynamic attachment");
     }
 
     @Attachment
-    public String makeAttach() {
+    private String makeAttach() {
         return "yeah, 2 is 2";
     }
 
@@ -52,7 +50,7 @@ public class SimpleTest {
     }
 
     @Attachment(value = "Sample csv attachment", type = "text/csv")
-    public byte[] saveCsvAttachment() throws URISyntaxException, IOException {
+    private byte[] saveCsvAttachment() throws URISyntaxException, IOException {
         URL resource = getClass().getClassLoader().getResource("sample.csv");
         if (resource == null) {
             fail("Couldn't find resource 'sample.csv'");

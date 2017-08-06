@@ -3,6 +3,8 @@ package my.company.tests;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,23 +12,19 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * eroshenkoam
- * 01.05.17
- */
 @RunWith(Parameterized.class)
 public class ParameterizedTest {
 
-    @Parameterized.Parameter
+    @Parameter
     public int first;
 
-    @Parameterized.Parameter(1)
+    @Parameter(1)
     public int second;
 
-    @Parameterized.Parameter(2)
+    @Parameter(2)
     public long result;
 
-    @Parameterized.Parameters
+    @Parameters
     public static List<Object[]> getData() {
         return Arrays.asList(new Object[]{1, 2, 2}, new Object[]{2, 4, 8});
     }
