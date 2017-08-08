@@ -90,7 +90,11 @@
                         </property>
                         <property>
                             <name>allure.link.issue.pattern</name>
-                            <value>https://example.org/issue/{}</value>
+                            <value>https://www.mulesoft.org/jira/browse/{}</value>
+                        </property>
+                        <property>
+                            <name>allure.link.tms.pattern</name>
+                            <value>https://qamule.testrail.net/index.php?/cases/view/{}</value>
                         </property>
                     </systemProperties>
                 </configuration>
@@ -107,7 +111,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.8</version>
                 <configuration>
-                    <reportVersion>2.3.1</reportVersion>
+                    <reportVersion>2.3.3</reportVersion>
                 </configuration>
             </plugin>
             <plugin>
@@ -144,6 +148,7 @@
                                     <directory>${basedir}/src/test/resources</directory>
                                     <includes>
                                         <include>categories.json</include>
+                                        <include>report.properties</include>
                                     </includes>
                                 </resource>
                             </resources>

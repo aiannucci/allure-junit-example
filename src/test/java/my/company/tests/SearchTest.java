@@ -35,8 +35,8 @@ public class SearchTest {
     }
 
     @Test
-    @TmsLink("TMS-1")
-    @Issue("ISSUE-1")
+    @TmsLink("12059")
+    @Issue("MULE-13179")
     @Severity(BLOCKER)
     @Description("This test exercises a simple search")
     public void searchTest() throws Exception {
@@ -47,10 +47,9 @@ public class SearchTest {
     }
 
     @Test
-    @TmsLink("zaraza2")
+    @TmsLink("12059")
     @Description("This test searches for the answer to life, the universe and everything")
     @Severity(MINOR)
-    @Flaky
     public void towelTest() throws Exception {
         steps.openMainPage();
         steps.search("answer to life, the universe and everything");
